@@ -49,8 +49,11 @@ class App extends Component {
       return (<div> Loading... </div>)
     }
 
-    const filteredEmotionalTransactions = emotionalTransactions.filter((emotionalTransaction) => emotionalTransaction.description &&
-      emotionalTransaction.description.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1 );
+    const filteredEmotionalTransactions = emotionalTransactions.filter((emotionalTransaction) =>
+      ( emotionalTransaction.description &&
+      emotionalTransaction.description.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1 ) ||
+      ( emotionalTransaction.emotion &&
+      emotionalTransaction.emotion.indexOf(searchFilter.toLowerCase()) > -1 ) );
 
     const dayEmotionalTransactions = getDayEmotionalTransactions(filteredEmotionalTransactions);
 

@@ -17,4 +17,5 @@ app.get('/emotional-transactions', (req, res) => {
     })
 });
 
+// For the purposes of this simplified demo we do a hardcoded 3005 port.
 app.listen(3005, () => console.log('Server listening on port 3005!'))
