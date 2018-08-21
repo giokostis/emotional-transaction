@@ -1,7 +1,7 @@
 export function getFormattedAmountForCurrency(amount, currency) {
   switch (currency) {
     case 'GBP':
-      return `${amount}£`;
+      return `£${amount}`;
     default:
       return `${amount}${currency}`;
   }

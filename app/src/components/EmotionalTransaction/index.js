@@ -30,9 +30,12 @@ class EmotionalTransaction extends Component {
     const { description, emotion, currency, amount } = this.props;
     const { emojiPickerOpen } = this.state;
 
-    const formattedAmount = getFormattedAmountForCurrency(amount, currency);
+    const formattedAmount = getFormattedAmountForCurrency(Math.abs(amount), currency);
     const emojiObject = _.find(availableEmojis, { name: emotion });
     const emoji = emojiObject ? emojiObject.emoji : '';
+
+    const finalAmountDisplay = amount > 0 ? `+${formattedAmount}` : formattedAmount;
+    const amountStyle = amount > 0 ? { color: '#00ccaa'} : null;
 
     return (
       <div className="emotionalTransactionRow">
@@ -49,7 +52,7 @@ class EmotionalTransaction extends Component {
             </div> }
             { emoji || <span> + <i className="fas fa-smile"></i></span>}
           </span>
-          <span className="emotionalTransactionPrice"> {formattedAmount} </span>
+          <span className="emotionalTransactionPrice" style={amountStyle}> {finalAmountDisplay} </span>
         </span>
       </div>
     );
