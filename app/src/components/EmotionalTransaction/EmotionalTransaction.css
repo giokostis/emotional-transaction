@@ -1,0 +1,43 @@
+.emotionalTransactionRow {
+  padding: 30px 70px;
+  background-color: white;
+  border: 1px solid #ebeef5;
+  color: #2a4552;
+  font-size: 22px;
+}
+
+.emotionalTransactionLogo {
+  width: 45px;
+  vertical-align: middle;
+  margin-right: 35px;
+}
+
+.emotionalTransactionPrice {
+  font-weight: bold;
+  width: 130px;
+  display: inline-block;
+  text-align: right;
+}
+
+.emotionalTransactionEmojiContainer {
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 14px 5px #d7e7ef;
+  position: relative;
+  color: #a3becc;
+}
+
+.emotionalTransactionRight {
+  float: right;
+}
+
+.emojiPicker {
+  position: absolute;
+  bottom: 55px;
+  left: -80px;
+  width: 145px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 14px 5px #d7e7ef;
+  background-color: white;
+}

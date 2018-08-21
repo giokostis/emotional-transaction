@@ -1,0 +1,59 @@
+#root {
+  background-color: #f0f6fa;
+}
+
+.App {
+  margin: 0 auto;
+  width: 750px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.dayIndication {
+  font-size: 22px;
+  color: #a3becc;
+  background-color: #f0f6fa;
+  padding: 45px 0px 25px 65px;
+  border: 1px solid #ebeef5;
+}
+
+.searchBar {
+  width: 688px;
+  height: 110px;
+  padding: 0;
+  border: 0;
+  padding-left: 62px;
+  font-size: 23px;
+  color: #2a4552;
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+.searchBar::-webkit-input-placeholder {
+  font-size: 23px;
+  color: #a3becc;
+}
+
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
