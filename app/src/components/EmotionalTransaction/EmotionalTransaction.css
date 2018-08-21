@@ -1,3 +1,5 @@
+/* TODO: Use scss */
+
 .emotionalTransactionRow {
   padding: 30px 70px;
   background-color: white;
@@ -27,6 +29,10 @@
   color: #a3becc;
 }
 
+.emotionalTransactionEmojiContainer:hover {
+  cursor: pointer;
+}
+
 .emotionalTransactionRight {
   float: right;
 }
@@ -35,9 +41,13 @@
   position: absolute;
   bottom: 55px;
   left: -80px;
-  width: 145px;
+  width: 170px;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 5px 14px 5px #d7e7ef;
   background-color: white;
+}
+
+.emojiPicker span:hover {
+  cursor: pointer;
 }

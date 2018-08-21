@@ -8,6 +8,17 @@ import { getFormattedAmountForCurrency } from '../../utils/currency'
 import './EmotionalTransaction.css';
 import { availableEmojis } from '../../constants/index';
 
+// TODO: Amount to be moved on a separate dumb component.
+const Amount = ({amount, currency}) => {
+  const formattedAmount = getFormattedAmountForCurrency(Math.abs(amount), currency);
+  const finalAmountDisplay = amount > 0 ? `+${formattedAmount}` : formattedAmount;
+  const amountStyle = amount > 0 ? { color: '#00ccaa'} : null;
+
+  return <span className="emotionalTransactionPrice" style={amountStyle}> {finalAmountDisplay} </span>;
+}
+
+// TODO: Move Emoji Picker to smart component.
+
 class EmotionalTransaction extends Component {
 
   constructor(props) {
@@ -30,12 +41,8 @@ class EmotionalTransaction extends Component {
     const { description, emotion, currency, amount } = this.props;
     const { emojiPickerOpen } = this.state;
 
-    const formattedAmount = getFormattedAmountForCurrency(Math.abs(amount), currency);
     const emojiObject = _.find(availableEmojis, { name: emotion });
     const emoji = emojiObject ? emojiObject.emoji : '';
-
-    const finalAmountDisplay = amount > 0 ? `+${formattedAmount}` : formattedAmount;
-    const amountStyle = amount > 0 ? { color: '#00ccaa'} : null;
 
     return (
       <div className="emotionalTransactionRow">
@@ -49,10 +56,11 @@ class EmotionalTransaction extends Component {
                   <span key={emoji.key} id={emoji.name} onClick={(e) => this.handleClickEmoji(e)}> {emoji.emoji} </span>
                 )
               ) }
+              <span id='' style={{ color: 'red' }} title='Remove' onClick={(e) => this.handleClickEmoji(e)}>X</span>
             </div> }
             { emoji || <span> + <i className="fas fa-smile"></i></span>}
           </span>
-          <span className="emotionalTransactionPrice" style={amountStyle}> {finalAmountDisplay} </span>
+          <Amount amount={amount} currency={currency}/>
         </span>
       </div>
     );
